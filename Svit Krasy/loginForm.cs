@@ -29,7 +29,11 @@ namespace Svit_Krasy
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Purple800, Primary.Purple900, Primary.Purple400, Accent.Purple100, TextShade.WHITE);
-         
+            DateTime date1 = DateTime.Now;
+            timer1.Interval = 1000;
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Enabled = true;
+
 
         }
 
@@ -62,6 +66,10 @@ namespace Svit_Krasy
 
         }
 
-
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            materialLabel3.Text = DateTime.Now.ToString();
+        }
     }
 }
+
